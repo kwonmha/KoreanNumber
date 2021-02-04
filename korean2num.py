@@ -81,7 +81,7 @@ float_nums = [
     ("구", 9)
 ]
 
-
+# TODO: bug - consecutive arabic numbers: ex) 12만2천
 def kr2num(kr_str):
     decode_result = []
     result = 0
