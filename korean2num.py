@@ -9,6 +9,7 @@ Forked & Modified by WieeRd
 """
 
 numbers = [
+    # Digits
     ('1', 1),
     ('2', 2),
     ('3', 3),
@@ -18,6 +19,16 @@ numbers = [
     ('7', 7),
     ('8', 8),
     ('9', 9),
+
+    ("일", 1),
+    ("이", 2),
+    ("삼", 3),
+    ("사", 4),
+    ("오", 5),
+    ("육", 6),
+    ("칠", 7),
+    ("팔", 8),
+    ("구", 9),
 
     ("하나", 1),
     ("한", 1),
@@ -33,8 +44,8 @@ numbers = [
     ("여덟", 8),
     ("여덜", 8),
     ("아홉", 9),
-    ("열", 10),
 
+    # Digits + Unit
     ("스물", 20),
     ("서른", 30),
     ("마흔", 40),
@@ -44,66 +55,19 @@ numbers = [
     ("여든", 80),
     ("아흔", 90),
 
-    ("일", 1),
-    ("이", 2),
-    ("삼", 3),
-    ("사", 4),
-    ("오", 5),
-    ("육", 6),
-    ("칠", 7),
-    ("팔", 8),
-    ("구", 9),
-
+    # Mini Unit
+    ("열", 10),
     ("십", 10),
     ("백", 10**2),
     ("천", 10**3),
+
+    # Unit
     ("만", 10**4),
     ("억", 10**8),
     ("조", 10**12),
     ("경", 10**16),
     ("해", 10**20),
 ]
-
-number_types = {
-    "키로": "kg",
-    "키로그램": "kg",
-    "킬로": "kg",
-    "킬로그램": "kg",
-    '킬로그람': "kg",
-    "그램": "g",
-    "그람": "g",
-    "리터": "L",
-    "밀리리터": "mL",
-    "미리리터": "mL",
-    "미리": "mL",
-    "밀리": "mL",
-    "센치미터": "cm",
-    "센티미터": "cm",
-    "밀리미터": "mm",
-    "미터": "m",
-    "개입": "개입",
-    "개": "개",
-    "명": "명",
-    "원": "원",
-    "묶음": "묶음",
-    "단": "단",
-    "모": "모",
-    "세트": "세트",
-    "병": "병",
-    "장": "장",
-    "박스": "박스",
-    "봉지": "봉지",
-    "팩": "팩",
-    "줄": "줄",
-    "망": "망",
-    "포": "포",
-    "말": "말",
-    "캔": "캔",
-    "판": "판",
-    "자루": "자루",
-    "가마니": "가마니",
-    "통": "통",
-}
 
 float_nums = [
     ("일", 1),
@@ -123,19 +87,6 @@ def kr2num(kr_str):
     result = 0
     temp_result = 0
     index = 0
-    number_type = None
-
-    for word in kr_str.split():
-        if word in number_types:
-            number_type = number_types.get(word)
-        elif word.isdigit():
-            result = int(word)
-
-    if result > 0:
-        if number_type is not None:
-            return str(result) + number_type
-        else:
-            return result
 
     float_dividing = kr_str.split("점")
     float_result = ""
@@ -190,8 +141,5 @@ def kr2num(kr_str):
 
     if float_result != 0.0:
         result += float_result
-
-    if number_type is not None:
-        result = str(result) + number_type
 
     return result
