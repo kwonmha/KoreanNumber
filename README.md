@@ -10,7 +10,11 @@ Changing Korean number to natural number
 
 import korean2num
 
-print(korean2num.decode("일조삼천육백칠십일억이천구백삼십칠만사천오백십일"))
+# kr_str = input("Number in Korean: ")
+kr_str = "일조삼천육백칠십일억이천구백삼십칠만사천오백십일"
+val = korean2num.kr2num(kr_str)
+
+print(val)
 # >>> 1367129374511
 
 ```
