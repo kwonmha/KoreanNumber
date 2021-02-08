@@ -1,7 +1,20 @@
-import korean2num
+import num2kr
+import kr2num
 
-while True:
-    kr_str = input("Number in Korean: ")
-    print(korean2num.kr2num(kr_str))
+try:
+	print("Testing Number -> Korean")
+	while True:
+		num = int(input("Integer: "))
+		print(num2kr.num2kr(num))
+except KeyboardInterrupt:
+	pass
 
-# Current bug: 12만2천
+print()
+
+try:
+	print("Testing Korean -> Number")
+	while True:
+	    kr_str = input("Korean: ")
+	    print(kr2num.kr2num(kr_str))
+except KeyboardInterrupt:
+	pass
