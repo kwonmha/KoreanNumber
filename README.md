@@ -35,5 +35,5 @@ print(kr2num.kr2num(kr_str))
 
 ## Credit
 
-kr2num: forked from https://github.com/codertimo/korean2num
+kr2num: forked from https://github.com/codertimo/korean2num  
 num2kr: inspired by https://m.blog.naver.com/wideeyed/221771836059
