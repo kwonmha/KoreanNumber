@@ -12,7 +12,7 @@ def split_digit(num:int, div:int = 10) -> list:
 
 def num2kr(num : int, mode=0) -> str:
 	if num>=pow(10000, len(unit_10k)+1):
-		return None # way too big
+		raise ValueError("Value exceeds 10e72; cannot be read")
 
 	digit_10k = split_digit(num, 10000)
 
